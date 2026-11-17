@@ -1,0 +1,13 @@
+/* =========================================================
+   ESTILO.CSS — Ajustes propios del PROBLEMA 2
+   Lo común está en ../ejercicio.css; aquí solo lo particular.
+   ========================================================= */
+
+/* El campo "Cantidad" ocupa el espacio libre de la fila */
+#cantidad {
+  flex: 1 1 140px;
+  min-width: 110px;
+}
+
+/* Alto mínimo para las 10 líneas del reporte */
+.salida { min-height: 250px; }

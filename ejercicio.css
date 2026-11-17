@@ -1,0 +1,170 @@
+/* =========================================================
+   EJERCICIO.CSS — Estilos comunes a los 3 ejercicios
+   Cada página carga: ../style.css + ../ejercicio.css + estilo.css
+   (estilo.css solo contiene ajustes propios de cada problema).
+   ========================================================= */
+
+/* ---------- 1. CONTENEDOR DE LA PÁGINA ---------- */
+.contenedor {
+  width: min(100% - 48px, 1080px);
+  flex: 1;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  margin: 28px auto;
+}
+
+/* Botón para regresar a la portada */
+.volver {
+  justify-self: start;
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid #b8324f;
+  border-radius: 8px;
+  background: var(--rojo);
+  color: var(--blanco);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(28, 46, 74, .08);
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+
+.volver:hover {
+  background: #7f1230;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(28, 46, 74, .12);
+}
+
+.volver:focus-visible { outline: 3px solid rgba(50, 105, 180, .35); outline-offset: 2px; }
+
+/* ---------- 2. TARJETAS ---------- */
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: var(--sombra);
+}
+
+.card__title {
+  margin: 0;
+  color: var(--texto);
+  font-size: 22px;
+}
+
+.card__sub { margin: 6px 0 18px; color: var(--texto-suave); font-size: 14px; }
+
+/* ---------- 3. FORMULARIO ---------- */
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.fila label { font-weight: 700; color: var(--texto); }
+
+/* Fila inferior (botón de reinicio) separada del reporte */
+.fila--fin {
+  justify-content: flex-end;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--borde);
+}
+
+input, select {
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid #9fb0c6;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--blanco);
+  color: #202b3d;
+}
+
+input:focus, select:focus {
+  outline: 3px solid rgba(50, 105, 180, .35);
+  border-color: var(--azul);
+}
+
+/* ---------- 4. BOTONES ---------- */
+.btn {
+  min-height: 40px;
+  padding: 9px 18px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blanco);
+  cursor: pointer;
+  transition: filter .15s, transform .15s;
+}
+
+.btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 3px solid rgba(50, 105, 180, .45); outline-offset: 2px; }
+
+.btn--azul { background: var(--azul); }
+.btn--gris { background: #74869c; }
+.btn--rojo { background: var(--rojo); }
+
+/* ---------- 5. MENSAJES DE VALIDACIÓN ---------- */
+.mensaje {
+  min-height: 22px;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rojo);
+}
+
+/* ---------- 6. RECUADROS DE RESULTADOS ---------- */
+/* Subtítulo tipo barra (usado en el ejercicio 03) */
+.subtitulo {
+  margin: 4px 0 0;
+  padding: 7px 14px;
+  border: 1px solid #b6c3d4;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  background: #b9cde2;
+  color: var(--azul-profundo);
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: .04em;
+}
+
+.salida {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #b6c3d4;
+  border-radius: 8px;
+  background: #fbfcfe;
+  color: #14345c;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* Cuando la salida va justo debajo de un .subtitulo, se une a la barra */
+.subtitulo + .salida { border-radius: 0 0 8px 8px; }
+
+/* ---------- 7. DISEÑO ADAPTABLE ---------- */
+@media (max-width: 640px) {
+  .contenedor { width: min(100% - 36px, 1080px); }
+}
+
+@media (max-width: 520px) {
+  .card { padding: 16px; }
+  .fila { flex-direction: column; align-items: stretch; }
+  .fila label { margin-top: 4px; }
+  .btn { width: 100%; }
+}
+
+@media (max-width: 430px) {
+  .contenedor { width: min(100% - 28px, 1080px); margin-top: 20px; }
+}

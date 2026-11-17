@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ===== 1. CONFIGURACIÓN BÁSICA ===== -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Problema 3: venta de licencias Video Edit 2.0 usando el patrón MVC.">
+  <title>Problema 3 | Examen Final</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../ejercicio.css">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- ===== 2. ENCABEZADO INSTITUCIONAL ===== -->
+  <header class="topline">
+    <div class="identity">
+      <img src="../imagenes/INSIGNIA_UPRIT.png" alt="Insignia UPRIT">
+      <div class="identity__name">Universidad Privada<br>de Trujillo</div>
+    </div>
+  </header>
+
+  <!-- ===== 3. CONTENIDO DEL PROBLEMA 3 ===== -->
+  <main class="contenedor">
+    <a class="volver" href="../index.html">Volver a Presentación</a>
+
+    <!-- Tarjeta principal: registro de ventas -->
+    <section class="card">
+      <h1 class="card__title">Problema 3 - Licencias Video Edit 2.0</h1>
+      <p class="card__sub">Cobre: $ 510 &middot; Bronze: $ 1500 &middot; Silver: $ 3100 &middot; Gold: $ 4500</p>
+
+      <!-- Formulario: tipo de licencia, cantidad y botones -->
+      <div class="fila">
+        <label for="tipo">Tipo de licencia</label>
+        <select id="tipo">
+          <option value="Cobre">Cobre</option>
+          <option value="Bronze">Bronze</option>
+          <option value="Silver">Silver</option>
+          <option value="Gold" selected>Gold</option>
+        </select>
+
+        <label for="cantidad">Número de licencias</label>
+        <input id="cantidad" type="number" min="1" step="1" placeholder="Ej. 2" autocomplete="off">
+
+        <button id="btn-procesar" type="button" class="btn btn--azul">Procesar</button>
+        <button id="btn-borrar" type="button" class="btn btn--gris">Borrar</button>
+      </div>
+
+      <!-- Zona de mensajes de validación -->
+      <p id="mensaje" class="mensaje" role="alert" aria-live="polite"></p>
+
+      <!-- Recuadro 1: detalle de la última venta -->
+      <h2 class="subtitulo">Venta Actual</h2>
+      <pre id="salida-venta" class="salida salida--venta" aria-live="polite"></pre>
+
+      <!-- Recuadro 2: acumulado histórico por tipo de licencia -->
+      <h2 class="subtitulo">Reporte Histórico</h2>
+      <pre id="salida-reporte" class="salida salida--reporte" aria-live="polite"></pre>
+
+      <!-- Botón para reiniciar el reporte histórico -->
+      <div class="fila fila--fin">
+        <button id="btn-reiniciar" type="button" class="btn btn--rojo">Reiniciar reporte</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 4. PIE DE PÁGINA ===== -->
+  <footer>Derechos Reservados ITeMH @ Universidad Privada de Trujillo</footer>
+
+  <!-- ===== 5. LÓGICA DEL EJERCICIO (Modelo - Vista - Controlador) ===== -->
+  <script src="script.js"></script>
+</body>
+</html>
