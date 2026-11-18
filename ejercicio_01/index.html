@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ===== 1. CONFIGURACIÓN BÁSICA ===== -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Problema 1: conteo de números por intervalos entre 100 y 900 usando el patrón MVC.">
+  <title>Problema 1 | Examen Final</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../ejercicio.css">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- ===== 2. ENCABEZADO INSTITUCIONAL ===== -->
+  <header class="topline">
+    <div class="identity">
+      <img src="../imagenes/INSIGNIA_UPRIT.png" alt="Insignia UPRIT">
+      <div class="identity__name">Universidad Privada<br>de Trujillo</div>
+    </div>
+  </header>
+
+  <!-- ===== 3. CONTENIDO DEL PROBLEMA 1 ===== -->
+  <main class="contenedor">
+    <a class="volver" href="../index.html">Volver a Presentación</a>
+
+    <!-- Tarjeta principal: entrada de datos y resultados -->
+    <section class="card">
+      <h1 class="card__title">Problema 1 - Intervalos numéricos</h1>
+
+      <!-- Enunciado del problema -->
+      <div class="enunciado">
+        <p class="enunciado__titulo">Enunciado</p>
+        <p>Diseñe un programa que permita ingresar, mediante un botón y de uno en uno, números enteros mayores o iguales que 100 y menores o iguales que 900 y determine:</p>
+        <ul>
+          <li>Cuántos números pertenecen a cada uno de los siguientes intervalos: 100 a 300, 301 a 500, 501 a 700 y 701 a 900.</li>
+          <li>El mayor y el menor número ingresados.</li>
+        </ul>
+      </div>
+
+      <!-- Formulario: campo numérico y botones -->
+      <div class="fila">
+        <label for="numero">Número</label>
+        <input id="numero" type="number" min="100" max="900" step="1" placeholder="Ej. 789" autocomplete="off">
+        <button id="btn-borrar" type="button" class="btn btn--gris">Borrar</button>
+        <button id="btn-ingresar" type="button" class="btn btn--azul">Ingresar</button>
+      </div>
+
+      <!-- Zona de mensajes de validación -->
+      <p id="mensaje" class="mensaje" role="alert" aria-live="polite"></p>
+
+      <!-- Reporte con el formato de la ventana del examen -->
+      <pre id="salida" class="salida" aria-live="polite"></pre>
+
+      <!-- Botón para reiniciar los contadores (extra de práctica) -->
+      <div class="fila fila--fin">
+        <button id="btn-reiniciar" type="button" class="btn btn--rojo">Reiniciar contadores</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 4. PIE DE PÁGINA ===== -->
+  <footer>Derechos Reservados ITeMH @ Universidad Privada de Trujillo</footer>
+
+  <!-- ===== 5. LÓGICA DEL EJERCICIO (Modelo - Vista - Controlador) ===== -->
+  <script src="script.js"></script>
+</body>
+</html>
