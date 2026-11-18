@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ===== 1. CONFIGURACIÓN BÁSICA ===== -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Problema 2: simulación de un almacén de bolsas de cemento usando el patrón MVC.">
+  <title>Problema 2 | Examen Final</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../ejercicio.css">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- ===== 2. ENCABEZADO INSTITUCIONAL ===== -->
+  <header class="topline">
+    <div class="identity">
+      <img src="../imagenes/INSIGNIA_UPRIT.png" alt="Insignia UPRIT">
+      <div class="identity__name">Universidad Privada<br>de Trujillo</div>
+    </div>
+  </header>
+
+  <!-- ===== 3. CONTENIDO DEL PROBLEMA 2 ===== -->
+  <main class="contenedor">
+    <a class="volver" href="../index.html">Volver a Presentación</a>
+
+    <!-- Tarjeta principal: operaciones y estado del almacén -->
+    <section class="card">
+      <h1 class="card__title">Problema 2 - Almacén de bolsas de cemento</h1>
+      <p class="card__sub">Stock inicial: 2000 bolsas &middot; Capacidad del almacén: 3500 bolsas.</p>
+
+      <!-- Formulario: operación, cantidad y botones -->
+      <div class="fila">
+        <label for="operacion">Operación</label>
+        <select id="operacion">
+          <option value="deposito">Depósito</option>
+          <option value="retiro">Retiro</option>
+        </select>
+
+        <label for="cantidad">Cantidad</label>
+        <input id="cantidad" type="number" min="1" step="1" placeholder="Ej. 56" autocomplete="off">
+
+        <button id="btn-operar" type="button" class="btn btn--azul">Operar</button>
+        <button id="btn-borrar" type="button" class="btn btn--gris">Borrar</button>
+      </div>
+
+      <!-- Zona de mensajes de validación -->
+      <p id="mensaje" class="mensaje" role="alert" aria-live="polite"></p>
+
+      <!-- Reporte del estado del almacén -->
+      <pre id="salida" class="salida" aria-live="polite"></pre>
+
+      <!-- Botón para reiniciar el almacén a sus valores iniciales -->
+      <div class="fila fila--fin">
+        <button id="btn-reiniciar" type="button" class="btn btn--rojo">Reiniciar almacén</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 4. PIE DE PÁGINA ===== -->
+  <footer>Derechos Reservados ITeMH @ Universidad Privada de Trujillo</footer>
+
+  <!-- ===== 5. LÓGICA DEL EJERCICIO (Modelo - Vista - Controlador) ===== -->
+  <script src="script.js"></script>
+</body>
+</html>
